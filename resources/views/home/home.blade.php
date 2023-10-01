@@ -30,7 +30,7 @@
 		</div>
 	</div>
 	<!-- End Hero -->
-
+	<!-- Home Page -->
 	<main id="main">
 		<!-- ======= What we offer/services Section ======= -->
 		<section id="what-we-offer services" class="what-we-offer services white-bg">
