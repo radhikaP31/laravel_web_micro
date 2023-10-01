@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /public/home-demo
+Disallow: /public/services/elegant-garden
+Disallow: /cgi-bin/
+Sitemap: https://microfluidprocess.com/sitemap.xml
