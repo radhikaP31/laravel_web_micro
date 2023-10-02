@@ -77,6 +77,7 @@ Route::controller(ContactController::class)->group(function () {
     Route::get('/contact-us', 'index')->name('contact'); //Display contact page
     Route::post('/contact/add', 'create')->name('contact_add'); //Create contact
     Route::post('/contact/quoteAdd', 'quoteAdd')->name('quote_add'); //Request quote
+    Route::get('/refresh_captcha', 'refreshCaptcha')->name('refresh_captcha');
 });
 
 //Admin Routes start

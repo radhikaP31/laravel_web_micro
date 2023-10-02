@@ -100,6 +100,16 @@
                 @enderror
               </div>
             </div>
+            <div class="row">
+                <div class="col-md-12 form-group mb-4 captcha">
+                    <span>{!! captcha_img() !!}</span>
+                    <button type="button" class="btn btn-primary primary-text refresh-captcha mb-3 ml-3"><i class="icofont-refresh"></i></button>
+                    <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha*" name="captcha" style="width: 22%;">
+                    @error('captcha')
+                    <div class="text-red text-10 is-invalid">{{ $errors->first('captcha') }}</div>
+                    @enderror
+                </div>
+              </div>
             <div class="text-center mt-3"><button type="submit" class="btn btn-primary primary-text rounded-0 py-2 px-4 submit_inquiry font-16"><b>Send Message</b></button></div>
           </form>
         </div>
@@ -107,13 +117,12 @@
     </div>
   </div>
   <script>
-    @if($errors->has('name') || $errors->has('email') || $errors->has('contact_number') || $errors->has('company_name') || $errors->has('message'))
+    @if($errors->has('name') || $errors->has('email') || $errors->has('contact_number') || $errors->has('company_name') || $errors->has('message')|| $errors->has('captcha'))
     $('#getQuoteModal').modal('show');
     @endif
   </script>
   <!-- Get in Touch Modal end -->
-  
-  
+
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-796ZSV6S2Z"></script>
 <script>

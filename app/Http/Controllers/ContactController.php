@@ -94,7 +94,8 @@ class ContactController extends Controller
                 'contact_number' => 'required|min:5|max:20',
                 'company_name' => 'required',
                 'message' => 'required',
-            ]);
+                'captcha' => 'required|captcha'
+            ],['captcha.captcha'=>'Invalid captcha code.', 'captcha.required' => 'Captcha code is required.']);
 
             $contact = new Contact();
             $contact->name = $request->name;
@@ -120,5 +121,15 @@ class ContactController extends Controller
                 return redirect()->route('contact');
             }
         }
+    }
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function refreshCaptcha()
+    {
+        return response()->json(['captcha' => captcha_img()]);
     }
 }

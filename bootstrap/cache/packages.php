@@ -17,6 +17,17 @@
       0 => 'Fruitcake\\Cors\\CorsServiceProvider',
     ),
   ),
+  'intervention/image' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Intervention\\Image\\ImageServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Image' => 'Intervention\\Image\\Facades\\Image',
+    ),
+  ),
   'laravel/sail' => 
   array (
     'providers' => 
@@ -38,6 +49,17 @@
       0 => 'Laravel\\Tinker\\TinkerServiceProvider',
     ),
   ),
+  'mews/captcha' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Mews\\Captcha\\CaptchaServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Captcha' => 'Mews\\Captcha\\Facades\\Captcha',
+    ),
+  ),
   'nesbot/carbon' => 
   array (
     'providers' => 
@@ -50,6 +72,13 @@
     'providers' => 
     array (
       0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+    ),
+  ),
+  'nunomaduro/termwind' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Termwind\\Laravel\\TermwindServiceProvider',
     ),
   ),
   'spatie/laravel-ignition' => 

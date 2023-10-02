@@ -2085,3 +2085,6 @@ background-repeat: no-repeat;
   flex-wrap: nowrap;
   align-items: center;
 }
+.captcha span img{
+  margin-bottom: 1rem;
+}

@@ -22,6 +22,7 @@ class ContactRequest extends FormRequest
             'contact.company_name' => 'required',
             'contact.message' => 'required',
             'contact.attachment' => 'nullable|max:500|mimes:pdf,doc,docx,jpeg,jpg,png,xlsx',
+            'contact.captcha' => 'required|captcha'
         ];
     }
     /**
@@ -44,6 +45,8 @@ class ContactRequest extends FormRequest
             'contact.country_code.required' => 'ISD Code is required',
             'contact.attachment.file' => 'Attachment file limit is 500kb',
             'contact.attachment.mimes' => 'Attachment file must be in pdf, doc, docx, jpeg, jpg, png or xlsx format.',
+            'contact.captcha.required' => 'Captcha code is required.',
+            'contact.captcha.captcha' => 'Invalid captcha code.',
         ];
     }
 }

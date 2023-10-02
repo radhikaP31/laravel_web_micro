@@ -30,8 +30,8 @@
                                     <i class="icofont-phone"></i>
                                     <h4 class="primary-text product-header-font-size text-left mb-2">Call:</h4>
                                     <p class="letter-spacing text-justify font-family-sans-serif pb-2 text-gray">
-                                        <a class="letter-spacing text-justify font-family-sans-serif pb-2 text-gray hover-mail"  href="tel://+91-70168 65019">
-                                        +91 70168 65019</a><br>Parth Patel
+                                        <a class="letter-spacing text-justify font-family-sans-serif pb-2 text-gray hover-mail" href="tel://+91-70168 65019">
+                                            +91 70168 65019</a><br>Parth Patel
                                     </p>
                                 </div>
                             </div>
@@ -106,6 +106,16 @@
                                     @enderror
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-12 form-group mb-4 captcha">
+                                    <span>{!! captcha_img() !!}</span>
+                                    <button type="button" class="btn btn-primary primary-text refresh-captcha mb-3 ml-3"><i class="icofont-refresh"></i></button>
+                                    <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha*" name="contact[captcha]" style="width: 16%;">
+                                    @error('contact.captcha')
+                                    <div class="text-red text-10 is-invalid">{{ $errors->first('contact.captcha') }}</div>
+                                    @enderror
+                                </div>
+                            </div>
                             <div class="text-center mt-4"><button type="submit" class="btn btn-primary primary-text rounded-0 py-2 px-4 submit_inquiry font-16"><b>Send Message</b></button></div>
                         </form>
                     </div>
@@ -120,5 +130,18 @@
             });
         </script>
         @endif
+        <script>
+            $(document).ready(function() {
+                $(".refresh-captcha").click(function() {
+                    $.ajax({
+                        type: 'GET',
+                        url: '/refresh_captcha',
+                        success: function(data) {
+                            $(".captcha span").html(data.captcha);
+                        }
+                    });
+                })
+            });
+        </script>
     </main><!-- End #main -->
 </x-app-layout>
