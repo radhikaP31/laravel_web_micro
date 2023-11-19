@@ -79,7 +79,6 @@ class Product extends Model
     public function specification()
     {
         return $this->hasMany(ProductSpecification::class, 'product_id', 'id');
-    
     }
 
     /**
@@ -88,7 +87,6 @@ class Product extends Model
     public function download()
     {
         return $this->hasMany(ProductDownload::class, 'product_id', 'id');
-    
     }
 
     /**
